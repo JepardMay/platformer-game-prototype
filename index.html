@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Pilot-Cat Adventure</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Press Start 2P', system-ui;
+      background-color: #372c4b;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .start-menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .start-menu.opened {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: initial;
+    }
+
+    .player-stats {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 16px;
+      -webkit-text-stroke: 1px white;
+    }
+
+    .player-stats span {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="start-menu">
+      <button class="button" type="button">Start</button>
+    </div>
+    <div class="player-stats">
+      <img src="img/ui/sparkle.png" alt="Sparkle" width="32" height=""32>
+      <span id="collectedSparkles">0</span>
+    </div>
+    <canvas></canvas>
+  </div>
+  <script src="js/data/map.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/classes/CollisionBlock.js"></script>
+  <script src="js/classes/Sprite.js"></script>
+  <script src="js/classes/Player.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/eventListeners.js"></script>
+</body>
+</html>
